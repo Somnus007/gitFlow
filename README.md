@@ -66,14 +66,17 @@ git flow release publish {release}
 
 ```bash
 git flow release finish {release}
-git push origin master
 git push origin develop
+git checkout master
+git rebase develop
+git push origin master
 git push --tags
 ```
 
 - 为`release`分支打`tag`
-- 将`release`分支合并到`master`分支上
-- 将`release`分支合并到`develop`分支上
+- 将本地`release`分支合并到本地`master`分支上
+- 将本地`release`分支合并到本地`develop`分支上
+- 切换到`develop`分支
 - 删除本地`release`分支
 - 同步远程`master`分支
 - 同步远程`develop`分支

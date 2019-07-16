@@ -73,10 +73,10 @@ git push origin master
 git push --tags
 ```
 
-- 为`release`分支打`tag`
 - 将本地`release`分支合并到本地`master`分支上
-- 将本地`release`分支合并到本地`develop`分支上
+- 为`release`分支打`tag`
 - 切换到`develop`分支
+- 将本地`tag`版本合并到本地`develop`分支上
 - 删除本地`release`分支
 - 同步远程`master`分支
 - 同步远程`develop`分支

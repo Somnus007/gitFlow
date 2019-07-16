@@ -23,4 +23,19 @@ git flow feature start {feature name/ticket number}
 ## finish a new feature
 
 ```bash
+git add .
+git commit -m 'commit msg'
 git flow feature finish {feature name/ticket number}
+```
+
+- 合并`feature`分支到`develop`
+- 删除本地`feature`分支
+- 切换到`develop`分支
+- **如何需要`code review`后再进行merge，建议使用`publish`**
+
+## publish a new feature
+```
+git add .
+git commit -m 'msg'
+git flow feature publish {feature}
+```

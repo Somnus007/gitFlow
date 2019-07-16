@@ -65,6 +65,8 @@ git flow release publish {release}
 ## Finish a new release
 
 ```bash
+git checkout master
+git pull   // Make sure your local master is up to date
 git flow release finish {release}
 git push origin develop
 git checkout master
@@ -73,6 +75,7 @@ git push origin master
 git push --tags
 ```
 
+- 拉取master分支，确保本地master分支与远程master分支同步
 - 将本地`release`分支合并到本地`master`分支上
 - 为`release`分支打`tag`
 - 切换到`develop`分支
@@ -86,4 +89,34 @@ git push --tags
 
 ```bash
 git flow hotfix start {version} [base version]
+...edit code
+git add .
+git commit -m 'msg'
 ```
+
+- 新建本地`release`分支，并切换到该分支
+
+
+## Finish a new hotfix
+**其步骤与`git flow release finish {release}`一致**
+
+```bash
+git checkout master
+git pull   // Make sure your local master is up to date
+git flow hotfix finish {version}
+git push origin develop
+git checkout master
+git rebase develop
+git push origin master
+git push --tags
+```
+
+- 拉取master分支，确保本地master分支与远程master分支同步
+- 将本地`hotfix`分支合并到本地`master`分支上
+- 为`hotfix`分支打`tag`
+- 切换到`develop`分支
+- 将本地`tag`版本合并到本地`develop`分支上
+- 删除本地`hotfix`分支
+- 同步远程`master`分支
+- 同步远程`develop`分支
+- 将`tag`推送至远程仓库

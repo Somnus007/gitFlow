@@ -96,6 +96,12 @@ git commit -m 'msg'
 
 - 新建本地`release`分支，并切换到该分支
 
+## Publish a new hotfix
+
+```bash
+git flow hotfix publish {version}   // 将本地hotfix分支push到远程仓库
+```
+
 
 ## Finish a new hotfix
 **其步骤与`git flow release finish {release}`一致**
